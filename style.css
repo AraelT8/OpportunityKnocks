@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
@@ -14,13 +14,14 @@ a {
     font-size: 14px;
 }
 
-p{
+p {
     color: #a4a8ac;
 }
 
 body {
     display: flex;
     height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .sidebar {
@@ -52,17 +53,18 @@ body {
     padding: 12px;
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .sidebar .side-nav .item a {
     color: #a4a8ac;
-    transition: all 0.3s ease;
+    transition: color 0.3s;
 }
 
 .sidebar .side-nav .item i {
     font-size: 20px;
     color: #a4a8ac;
-    transition: all 0.3s ease;
+    transition: color 0.3s;
 }
 
 .sidebar .side-nav .item.active {
@@ -76,7 +78,7 @@ body {
 }
 
 .sidebar .side-nav .item:hover a,
-.sidebar .side-nav .item:hover i{
+.sidebar .side-nav .item:hover i {
     color: #fafafa;
 }
 
@@ -140,6 +142,7 @@ body {
 .container {
     flex: 8;
     padding: 20px 40px 20px 24px;
+    transition: background-color 0.3s;
 }
 
 .container .nav {
@@ -277,7 +280,7 @@ body {
     font-size: 24px;
     color: #a4a8ac;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.3s;
 }
 
 .container .main .content .job-cards .card .card-header>i:hover {
@@ -425,8 +428,132 @@ body {
     color: #a4a8ac;
 }
 
-@media screen and (max-width: 1430px) {
+/* Night mode styles */
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
 
+body.night-mode .sidebar {
+    background: #1e1e1e;
+}
+
+body.night-mode .sidebar .side-nav .item {
+    background: #2c2c2c;
+}
+
+body.night-mode .sidebar .side-nav .item a,
+body.night-mode .sidebar .side-nav .item i {
+    color: #e0e0e0;
+    font-weight: 600; /* Increased font weight */
+}
+
+body.night-mode .sidebar .side-nav .item.active {
+    background: #333;
+}
+
+body.night-mode .sidebar .side-profile {
+    background: #333;
+}
+
+body.night-mode .sidebar .side-profile .info p {
+    color: #e0e0e0; /* Changed to ensure readability */
+    font-weight: 400; /* Slightly bolder font weight */
+}
+
+body.night-mode .sidebar .side-profile .skills .skill-tags .item {
+    background: #444;
+    color: #b0b0b0;
+}
+
+body.night-mode .sidebar .side-profile button {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444; /* Added border for better contrast */
+}
+
+body.night-mode .container {
+    background-color: #1e1e1e;
+}
+
+body.night-mode .container .nav .search,
+body.night-mode .container .nav .city {
+    background: #F2F2F2;
+}
+
+body.night-mode .container .nav .search input,
+body.night-mode .container .nav .city input {
+    color: #111; /* Adjusted color to match light mode */
+    background: transparent; /* Ensure transparency */
+    padding-left: 36px; /* Keep padding consistent */
+}
+
+body.night-mode .container .nav .search i,
+body.night-mode .container .nav .city i {
+    color: #666869; /* Ensure icon color is consistent */
+}
+
+body.night-mode .container .nav>button {
+    background: #333;
+    color: #e0e0e0;
+    border: 1px solid #444; /* Added border for better contrast */
+}
+
+body.night-mode .container .nav>i {
+    background: #444; /* Slightly darker background for better contrast */
+    color: #e0e0e0;
+    padding: 12px; /* Increased padding */
+}
+
+body.night-mode .container .nav .user-info a {
+    color: #e0e0e0; /* Ensured user info links are visible */
+}
+
+body.night-mode .container .main .content .job-cards .card {
+    border: 2px solid #333;
+    background: #2c2c2c;
+    padding: 16px; /* Increased padding */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+}
+
+body.night-mode .container .main .content .job-cards .card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* More pronounced shadow on hover */
+}
+
+body.night-mode .container .main .content .job-cards .card .card-header>i {
+    color: #b0b0b0; /* Adjusted icon color for better visibility */
+}
+
+body.night-mode .container .main .content .job-cards .card .card-desc {
+    color: #b0b0b0;
+}
+
+body.night-mode .container .main .filters .item .checkbox label {
+    color: #b0b0b0;
+    font-weight: 500; /* Slightly bolder font weight */
+}
+
+body.night-mode .container .main .filters .item .location {
+    background: #F2F2F2; /* Match background to light mode */
+    padding: 12px; /* Increased padding */
+    border: 1px solid #444; /* Added border for better contrast */
+}
+
+body.night-mode .container .main .filters .item .location i {
+    color: #666869; /* Ensure icon color is consistent */
+}
+
+body.night-mode .container .main .content .job-cards .card .card-header .job-info h5,
+body.night-mode .container .main .content .job-cards .card .card-header .job-info a {
+    color: #e0e0e0; /* Ensure job titles and company names are visible */
+}
+
+body.night-mode .container .main .content .job-cards .card .card-header .job-info p {
+    color: #b0b0b0; /* Adjusted color for better visibility */
+}
+
+@media screen and (max-width: 1430px) {
     .sidebar .side-profile .skills h5,
     .sidebar .side-profile .skills .skill-tags {
         display: none;
@@ -435,11 +562,9 @@ body {
     .sidebar .side-profile button {
         margin-top: 0;
     }
-
 }
 
 @media screen and (max-width: 1200px) {
-
     .container {
         padding: 20px 20px;
     }
@@ -454,11 +579,9 @@ body {
     .container .nav>button#menuToggle {
         display: flex;
     }
-
 }
 
 @media screen and (max-width: 992px) {
-
     .container .main {
         flex-direction: column-reverse;
     }
@@ -486,21 +609,18 @@ body {
     .container .main .filters .item {
         width: 46%;
     }
-
 }
 
 @media screen and (max-width: 768px) {
-    
-    .container .nav>button{
+    .container .nav>button {
         padding: 10px;
     }
 
-    .container .nav>i{
+    .container .nav>i {
         display: none;
     }
 
-    .container .main .content .job-cards{
+    .container .main .content .job-cards {
         grid-template-columns: 1fr;
     }
-
 }
