@@ -40,4 +40,4 @@ This project is licensed under the GNU General Public License. See the LICENSE f
 If you would like to contribute to this project, please fork the repository and submit a pull request with your changes. Ensure that your code adheres to the project's coding standards and includes appropriate documentation.
 
 ## Contact 
-For any Questions or feedback, please reach out to [here](araeltiejerina@gmail.com).
+For any Questions or feedback, please reach out to: araeltiejerina@gmail.com
